@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adote um Amigo - Patitas Hotel</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .adoption-section {
+            padding: 6rem 0 4rem;
+            background-color: var(--light-gray);
+        }
+
+        .adoption-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .adoption-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .adoption-hero h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .adoption-hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .process-section {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 4rem;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light-gray);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .pets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pet-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .pet-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pet-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pet-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pet-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .pet-info {
+            padding: 1.5rem;
+        }
+
+        .pet-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .pet-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .pet-detail {
+            background: var(--light-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pet-detail i {
+            color: var(--primary-color);
+        }
+
+        .pet-description {
+            margin: 1rem 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .btn-adopt {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-adopt:hover {
+            background-color: #ff5252;
+        }
+
+        .partners-section {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .partner-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .partner-card img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .partner-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pets-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Patitas Hotel Logo">
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="hoteis.html">Hotéis</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="adocao.html">Adote um Amigo</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção de Adoção -->
+    <section class="adoption-section">
+        <div class="adoption-container">
+            <div class="adoption-hero">
+                <h1>Adote um Amigo</h1>
+                <p>Dê um lar para um pet que precisa de amor e carinho. A adoção é um ato de amor que transforma vidas.</p>
+            </div>
+
+            <!-- Processo de Adoção -->
+            <div class="process-section">
+                <h2 class="section-title">Como Adotar</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Conheça os Pets</h3>
+                        <p>Explore nosso catálogo de pets disponíveis para adoção e escolha aquele que mais combina com você.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Preencha o Formulário</h3>
+                        <p>Preencha o formulário de interesse com seus dados e informações sobre sua experiência com pets.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Entrevista</h3>
+                        <p>Nossa equipe entrará em contato para uma entrevista e visita ao seu lar.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Adoção</h3>
+                        <p>Após a aprovação, você poderá levar seu novo amigo para casa e começar uma nova história.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pets Disponíveis -->
+            <h2 class="section-title">Pets Disponíveis para Adoção</h2>
+            <div class="pets-grid">
+                <!-- Pet 1 -->
+                <div class="pet-card">
+                    <div class="pet-image">
+                        <img src="../assets/images/pet1.jpg" alt="Thor">
+                        <span class="pet-status">Disponível</span>
+                    </div>
+                    <div class="pet-info">
+                        <h3>Thor</h3>
+                        <div class="pet-details">
+                            <span class="pet-detail">
+                                <i class="fas fa-dog"></i>
+                                Cachorro
+                            </span>
+                            <span class="pet-detail">
+                                <i class="fas fa-birthday-cake"></i>
+                                2 anos
+                            </span>
+                            <span class="pet-detail">
+                                <i class="fas fa-ruler"></i>
+                                Médio
+                            </span>
+                        </div>
+                        <p class="pet-description">Thor é um cachorro muito brincalhão e carinhoso. Adora passeios e se dá bem com outros animais.</p>
+                        <a href="contato.html" class="btn-adopt">Quero Adotar</a>
+                    </div>
+                </div>
+
+                <!-- Pet 2 -->
+                <div class="pet-card">
+                    <div class="pet-image">
+                        <img src="../assets/images/pet2.jpg" alt="Luna">
+                        <span class="pet-status">Disponível</span>
+                    </div>
+                    <div class="pet-info">
+                        <h3>Luna</h3>
+                        <div class="pet-details">
+                            <span class="pet-detail">
+                                <i class="fas fa-cat"></i>
+                                Gata
+                            </span>
+                            <span class="pet-detail">
+                                <i class="fas fa-birthday-cake"></i>
+                                1 ano
+                            </span>
+                            <span class="pet-detail">
+                                <i class="fas fa-ruler"></i>
+                                Pequena
+                            </span>
+                        </div>
+                        <p class="pet-description">Luna é uma gata tranquila e independente. Ideal para quem busca um companheiro mais reservado.</p>
+                        <a href="contato.html" class="btn-adopt">Quero Adotar</a>
+                    </div>
+                </div>
+
+                <!-- Pet 3 -->
+                <div class="pet-card">
+                    <div class="pet-image">
+                        <img src="../assets/images/pet3.jpg" alt="Rex">
+                        <span class="pet-status">Disponível</span>
+                    </div>
+                    <div class="pet-info">
+                        <h3>Rex</h3>
+                        <div class="pet-details">
+                            <span class="pet-detail">
+                                <i class="fas fa-dog"></i>
+                                Cachorro
+                            </span>
+                            <span class="pet-detail">
+                                <i class="fas fa-birthday-cake"></i>
+                                3 anos
+                            </span>
+                            <span class="pet-detail">
+                                <i class="fas fa-ruler"></i>
+                                Grande
+                            </span>
+                        </div>
+                        <p class="pet-description">Rex é um cachorro muito dócil e protetor. Perfeito para famílias que buscam um companheiro leal.</p>
+                        <a href="contato.html" class="btn-adopt">Quero Adotar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parceiros -->
+            <div class="partners-section">
+                <h2 class="section-title">Nossos Parceiros</h2>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <img src="../assets/images/partner1.png" alt="ONG Amigos dos Pets">
+                        <h3>ONG Amigos dos Pets</h3>
+                        <p>Parceira na causa da adoção responsável</p>
+                    </div>
+                    <div class="partner-card">
+                        <img src="../assets/images/partner2.png" alt="Vet Center">
+                        <h3>Vet Center</h3>
+                        <p>Clínica veterinária parceira</p>
+                    </div>
+                    <div class="partner-card">
+                        <img src="../assets/images/partner3.png" alt="Pet Shop Amigo">
+                        <h3>Pet Shop Amigo</h3>
+                        <p>Fornecedor de produtos para pets</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Patitas Hotel</h4>
+                    <p>O melhor hotel para seu pet</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@patitashotel.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Patitas Hotel. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html> 

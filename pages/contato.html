@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Patitas Hotel</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-section {
+            padding: 6rem 0 4rem;
+            background-color: var(--light-gray);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-item p {
+            margin: 0;
+        }
+
+        .social-media {
+            margin-top: 2rem;
+        }
+
+        .social-media h3 {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Patitas Hotel Logo">
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="hoteis.html">Hotéis</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="adocao.html">Adote um Amigo</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção de Contato -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Informações de Contato -->
+            <div class="contact-info">
+                <h2>Entre em Contato</h2>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Rua dos Cães, 123 - Bairro Pet<br>São Paulo - SP</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>(11) 99999-9999</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>contato@patitashotel.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <p>Segunda a Sábado: 8h às 20h<br>Domingo: 9h às 18h</p>
+                </div>
+
+                <div class="social-media">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975844554717!2d-46.6521529!3d-23.5646162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzUyLjYiUyA0NsKwMzknMDcuNyJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- Formulário de Contato -->
+            <div class="form-container">
+                <h2>Envie sua Mensagem</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Interesse</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="hospedagem">Hospedagem</option>
+                            <option value="banho">Banho e Tosa</option>
+                            <option value="passeio">Passeio</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Patitas Hotel</h4>
+                    <p>O melhor hotel para seu pet</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@patitashotel.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Patitas Hotel. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html> 

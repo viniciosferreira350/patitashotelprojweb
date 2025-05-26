@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotéis - Patitas Hotel</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hotels-section {
+            padding: 6rem 0 4rem;
+            background-color: var(--light-gray);
+        }
+
+        .hotels-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hotels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .hotel-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hotel-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hotel-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hotel-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .hotel-info {
+            padding: 1.5rem;
+        }
+
+        .hotel-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .hotel-location {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hotel-location i {
+            color: var(--primary-color);
+        }
+
+        .hotel-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .feature {
+            background: var(--light-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature i {
+            color: var(--primary-color);
+        }
+
+        .hotel-contact {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+        }
+
+        .btn-reserve {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-reserve:hover {
+            background-color: #ff5252;
+        }
+
+        .search-filter {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .search-form .form-group {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hotels-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Patitas Hotel Logo">
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="hoteis.html">Hotéis</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="adocao.html">Adote um Amigo</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção de Hotéis -->
+    <section class="hotels-section">
+        <div class="hotels-container">
+            <h1 class="section-title">Nossas Unidades</h1>
+
+            <!-- Filtro de Busca -->
+            <div class="search-filter">
+                <form class="search-form">
+                    <div class="form-group">
+                        <label for="city">Cidade</label>
+                        <select id="city" name="city">
+                            <option value="">Todas as cidades</option>
+                            <option value="sao-paulo">São Paulo</option>
+                            <option value="rio-de-janeiro">Rio de Janeiro</option>
+                            <option value="belo-horizonte">Belo Horizonte</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="services">Serviços</label>
+                        <select id="services" name="services">
+                            <option value="">Todos os serviços</option>
+                            <option value="hospedagem">Hospedagem</option>
+                            <option value="banho">Banho e Tosa</option>
+                            <option value="passeio">Passeio</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="availability">Disponibilidade</label>
+                        <select id="availability" name="availability">
+                            <option value="">Todas as datas</option>
+                            <option value="today">Hoje</option>
+                            <option value="tomorrow">Amanhã</option>
+                            <option value="weekend">Fim de Semana</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Buscar</button>
+                </form>
+            </div>
+
+            <!-- Grid de Hotéis -->
+            <div class="hotels-grid">
+                <!-- Hotel 1 -->
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="../assets/images/hotel1.jpg" alt="Patitas Hotel São Paulo">
+                        <span class="hotel-status">Vagas Disponíveis</span>
+                    </div>
+                    <div class="hotel-info">
+                        <h3>Patitas Hotel São Paulo</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mooca, São Paulo - SP</span>
+                        </div>
+                        <p>Unidade principal com instalações modernas e amplo espaço para recreação dos pets.</p>
+                        <div class="hotel-features">
+                            <span class="feature">
+                                <i class="fas fa-bed"></i>
+                                Hospedagem
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-shower"></i>
+                                Banho
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-cut"></i>
+                                Tosa
+                            </span>
+                        </div>
+                        <div class="hotel-contact">
+                            <div class="contact-info">
+                                <i class="fas fa-phone"></i>
+                                <span>(11) 99999-9999</span>
+                            </div>
+                            <div class="contact-info">
+                                <i class="fas fa-clock"></i>
+                                <span>24 horas</span>
+                            </div>
+                            <a href="contato.html" class="btn-reserve">Reservar Agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 2 -->
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="../assets/images/hotel2.jpg" alt="Patitas Hotel Rio de Janeiro">
+                        <span class="hotel-status">Vagas Limitadas</span>
+                    </div>
+                    <div class="hotel-info">
+                        <h3>Patitas Hotel Rio de Janeiro</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Copacabana, Rio de Janeiro - RJ</span>
+                        </div>
+                        <p>Unidade com vista para o mar e área de lazer exclusiva para os pets.</p>
+                        <div class="hotel-features">
+                            <span class="feature">
+                                <i class="fas fa-bed"></i>
+                                Hospedagem
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-paw"></i>
+                                Passeio
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-camera"></i>
+                                Fotos
+                            </span>
+                        </div>
+                        <div class="hotel-contact">
+                            <div class="contact-info">
+                                <i class="fas fa-phone"></i>
+                                <span>(21) 99999-9999</span>
+                            </div>
+                            <div class="contact-info">
+                                <i class="fas fa-clock"></i>
+                                <span>24 horas</span>
+                            </div>
+                            <a href="contato.html" class="btn-reserve">Reservar Agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 3 -->
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="../assets/images/hotel3.jpg" alt="Patitas Hotel Belo Horizonte">
+                        <span class="hotel-status">Vagas Disponíveis</span>
+                    </div>
+                    <div class="hotel-info">
+                        <h3>Patitas Hotel Belo Horizonte</h3>
+                        <div class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Savassi, Belo Horizonte - MG</span>
+                        </div>
+                        <p>Unidade com área verde e espaço para atividades ao ar livre.</p>
+                        <div class="hotel-features">
+                            <span class="feature">
+                                <i class="fas fa-bed"></i>
+                                Hospedagem
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-shower"></i>
+                                Banho
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-paw"></i>
+                                Passeio
+                            </span>
+                        </div>
+                        <div class="hotel-contact">
+                            <div class="contact-info">
+                                <i class="fas fa-phone"></i>
+                                <span>(31) 99999-9999</span>
+                            </div>
+                            <div class="contact-info">
+                                <i class="fas fa-clock"></i>
+                                <span>24 horas</span>
+                            </div>
+                            <a href="contato.html" class="btn-reserve">Reservar Agora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Patitas Hotel</h4>
+                    <p>O melhor hotel para seu pet</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@patitashotel.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Patitas Hotel. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos - Patitas Hotel</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .about-section {
+            padding: 6rem 0 4rem;
+            background-color: var(--light-gray);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-content h1 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .values-section {
+            background-color: var(--white);
+            padding: 4rem 0;
+            margin: 4rem 0;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .value-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .team-section {
+            margin-top: 4rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Patitas Hotel Logo">
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="hoteis.html">Hotéis</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="adocao.html">Adote um Amigo</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Sobre Nós -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h1>Quem Somos</h1>
+                    <p>O Patitas Hotel nasceu do amor pelos animais e da necessidade de oferecer um serviço de qualidade para os tutores que precisam viajar e não têm com quem deixar seus pets.</p>
+                    <p>Fundado em 2020, nosso hotel se destaca pelo cuidado especial que dedicamos a cada hóspede, tratando-os como membros da família. Nossa equipe é composta por profissionais apaixonados por animais e altamente qualificados para garantir o melhor atendimento.</p>
+                    <p>Nosso espaço foi projetado pensando no conforto e bem-estar dos pets, com áreas amplas para brincadeiras, descanso e socialização. Oferecemos serviços personalizados de acordo com as necessidades de cada animal.</p>
+                </div>
+                <div class="about-image">
+                    <img src="../assets/images/about.jpg" alt="Patitas Hotel">
+                </div>
+            </div>
+
+            <!-- Nossos Valores -->
+            <div class="values-section">
+                <h2 class="section-title">Nossos Valores</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Amor pelos Animais</h3>
+                        <p>Tratamos cada pet como um membro da família, com muito carinho e atenção.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Segurança</h3>
+                        <p>Ambiente seguro e monitorado 24 horas por dia.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-star"></i>
+                        <h3>Qualidade</h3>
+                        <p>Serviços de excelência e profissionais altamente qualificados.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h3>Compromisso</h3>
+                        <p>Comprometimento com o bem-estar e felicidade dos nossos hóspedes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nossa Equipe -->
+            <div class="team-section">
+                <h2 class="section-title">Nossa Equipe</h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="../assets/images/team1.jpg" alt="Membro da Equipe">
+                        </div>
+                        <div class="team-info">
+                            <h3>Ana Silva</h3>
+                            <p>Veterinária Responsável</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="../assets/images/team2.jpg" alt="Membro da Equipe">
+                        </div>
+                        <div class="team-info">
+                            <h3>Pedro Santos</h3>
+                            <p>Cuidador de Animais</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="../assets/images/team3.jpg" alt="Membro da Equipe">
+                        </div>
+                        <div class="team-info">
+                            <h3>Maria Oliveira</h3>
+                            <p>Tosadora Profissional</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Patitas Hotel</h4>
+                    <p>O melhor hotel para seu pet</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@patitashotel.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Patitas Hotel. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depoimentos - Patitas Hotel</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .testimonials-section {
+            padding: 6rem 0 4rem;
+            background-color: var(--light-gray);
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .rating {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .message {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .author {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .author strong {
+            color: var(--primary-color);
+        }
+
+        .author span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .testimonial-form h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .rating-input {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .rating-input input {
+            display: none;
+        }
+
+        .rating-input label {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .rating-input label:hover,
+        .rating-input label:hover ~ label,
+        .rating-input input:checked ~ label {
+            color: #FFD700;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Patitas Hotel Logo">
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="hoteis.html">Hotéis</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="adocao.html">Adote um Amigo</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção de Depoimentos -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <h1 class="section-title">Depoimentos dos Nossos Clientes</h1>
+            
+            <!-- Grid de Depoimentos -->
+            <div class="testimonials-grid">
+                <!-- Os depoimentos serão carregados dinamicamente via JavaScript -->
+            </div>
+
+            <!-- Formulário de Depoimento -->
+            <div class="testimonial-form">
+                <h2>Deixe seu Depoimento</h2>
+                <form id="testimonialForm">
+                    <div class="form-group">
+                        <label for="name">Seu Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="petName">Nome do seu Pet</label>
+                        <input type="text" id="petName" name="petName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Avaliação</label>
+                        <div class="rating-input">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5">★</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4">★</label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3">★</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2">★</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1">★</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Seu Depoimento</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Depoimento</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Patitas Hotel</h4>
+                    <p>O melhor hotel para seu pet</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@patitashotel.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Patitas Hotel. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html> 
