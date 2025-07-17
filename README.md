@@ -1,6 +1,6 @@
 # Patitas Hotel - Website
 
-Este é o website do Patitas Hotel, um hotel especializado em hospedagem para pets. O site foi desenvolvido com HTML, CSS e JavaScript, oferecendo uma experiência moderna e responsiva para os usuários.
+Este é  Patitas Hotel, um hotel especializado em hospedagem para pets. O site foi desenvolvido com HTML, CSS e JavaScript, como trabalho final da da disciplina de introdução a ao desenvolsimento Web da Universidade Fumec.
 
 ## 🚀 Funcionalidades
 
